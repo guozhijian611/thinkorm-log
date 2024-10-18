@@ -21,7 +21,7 @@ class BootstrapLog implements Bootstrap
             return;
         }
         // 进行监听处理
-        Db::listen(function($sql, $runtime) {
+        Db::listen(function($sql, $runtime) use ($config) {
             if ($sql === 'select 1') {
                 // 心跳
                 return;
@@ -29,11 +29,11 @@ class BootstrapLog implements Bootstrap
             $log = $sql." [{$runtime}s]";
             // 打印到控制台
             if ($config['console']) {
-                echo "\033[32m".$log."\033[0m";
+                echo "[".date("Y-m-d H:i:s")."]"."\033[32m".$log."\033[0m".PHP_EOL;
             }
             // 记录到日志文件
             if ($config['file']) {
-                Log::channel('plugin.saiadmin.sql')->info($log);
+                Log::channel('plugin.saithink.thinkorm-log.sql')->info($log);
             }
         });
     }

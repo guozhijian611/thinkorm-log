@@ -13,4 +13,18 @@ composer require saithink/thinkorm-log
 
 安装之前确保已安装webman
 
+<h1>配置文件</h1>
+
+基础配置：<code>config/plugin/saithink/thinkorm-log/app.php</code>
+
+```php
+return [
+    // 是否启用日志记录
+    'enable' => true,
+    // 是否输出到控制台
+    'console'   => true,
+    // 是否记录到日志文件
+    'file'  => true,
+];
+```
 </div>
