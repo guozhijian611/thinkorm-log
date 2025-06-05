@@ -4,6 +4,7 @@ namespace Saithink\ThinkOrmLog;
 use Webman\Bootstrap;
 use think\facade\Db;
 use support\Log;
+use Webman\Middleware;
 
 /**
  * 日志记录类
@@ -17,9 +18,16 @@ class BootstrapLog implements Bootstrap
             'console'   => false,
             'file'  => true,
         ]);
+        
         if (!$config['enable']) {
             return;
         }
+        
+        // 注册API日志中间件
+        if (isset($config['api_log']) && $config['api_log']['enable']) {
+            Middleware::add(ApiLogMiddleware::class);
+        }
+        
         // 进行监听处理
         Db::listen(function($sql, $runtime) use ($config) {
             if ($sql === 'select 1') {
