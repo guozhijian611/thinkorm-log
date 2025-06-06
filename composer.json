@@ -1,6 +1,6 @@
 {
-    "name": "saithink/thinkorm-log",
-    "description": "基于webman开发的ThinkOrm日志记录插件",
+    "name": "guozhijian611/thinkorm-log",
+    "description": "基于webman开发的ThinkOrm日志记录插件，增强版支持API日志",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -10,8 +10,8 @@
     },
     "authors": [
         {
-            "name": "saithink",
-            "email": "1430792918@qq.com"
+            "name": "guozhijian611",
+            "email": "your-email@example.com"
         }
     ]
 }
