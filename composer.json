@@ -26,5 +26,21 @@
         "workerman/webman-framework": "^1.0|^2.0",
         "topthink/think-orm": "^2.0|^3.0",
         "monolog/monolog": "^2.0|^3.0"
+    },
+    "scripts": {
+        "post-package-install": [
+            "Guozhijian611\\ThinkOrmLog\\Install::install"
+        ],
+        "post-package-update": [
+            "Guozhijian611\\ThinkOrmLog\\Install::update"
+        ],
+        "pre-package-uninstall": [
+            "Guozhijian611\\ThinkOrmLog\\Install::uninstall"
+        ]
+    },
+    "extra": {
+        "webman": {
+            "plugin": true
+        }
     }
 }
