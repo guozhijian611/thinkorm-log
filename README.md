@@ -2,7 +2,7 @@
 <h1>基于 webman 的ThinkOrm和 API日志记录</h1>
 
 基于 <a href="https://www.workerman.net/webman" target="_blank">webman</a> 使用ThinkOrm时的日志记录工具，同时支持API请求日志记录
-本插件基于 saithink/thinkorm-log 二次开发，增强API日志功能
+本插件基于 saithink/thinkorm-log 二次开发，由 guozhijian611 增强API日志功能
 
 <h1>功能特性</h1>
 
@@ -95,5 +95,11 @@ return [
 - SQL日志：通过 `Db::listen()` 监听数据库查询
 - API日志：通过中间件配置文件注册全局中间件
 - 配置控制：通过配置文件控制各功能的开关
+
+<h1>作者</h1>
+
+- 原作者：saithink
+- 增强版作者：guozhijian611
+- 项目地址：<a href="https://github.com/guozhijian611/thinkorm-log" target="_blank">https://github.com/guozhijian611/thinkorm-log</a>
 
 </div>

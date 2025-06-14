@@ -1,5 +1,5 @@
 <?php
-namespace Saithink\ThinkOrmLog;
+namespace Guozhijian611\ThinkOrmLog;
 
 use Webman\Bootstrap;
 use think\facade\Db;
