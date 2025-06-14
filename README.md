@@ -1,8 +1,8 @@
 <div style="padding:18px;max-width: 1024px;margin:0 auto;background-color:#fff;color:#333">
-<h1>ThinkOrm日志记录</h1>
+<h1>基于 webman 的ThinkOrm和 api日志记录</h1>
 
 基于 <a href="https://www.workerman.net/webman" target="_blank">webman</a> 使用ThinkOrm时的日志记录工具，同时支持API请求日志记录
-
+本插件基于 saiadmin/webman-log 二次开发
 <h1>功能特性</h1>
 
 - ThinkOrm SQL查询日志记录
@@ -18,7 +18,7 @@
 composer环境的安装命令如下
 
 ``` bash
-composer require saithink/thinkorm-log
+composer require guozhijian611/thinkorm-log
 ```
 
 安装之前确保已安装webman

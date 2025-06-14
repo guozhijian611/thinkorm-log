@@ -1,17 +1,17 @@
 {
-    "name": "saithink/thinkorm-log",
+    "name": "guozhijian611/thinkorm-log",
     "description": "基于webman开发的ThinkOrm日志记录插件",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Saithink\\ThinkOrmLog\\": "src/"
+            "Guozhijian611\\ThinkOrmLog\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "saithink",
-            "email": "1430792918@qq.com"
+            "name": "城南花开",
+            "email": "allen@gzj2001.com"
         }
     ]
 }
