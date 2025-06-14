@@ -1,6 +1,6 @@
 <?php
 
-namespace Saithink\ThinkOrmLog;
+namespace Guozhijian611\ThinkOrmLog;
 
 use Webman\MiddlewareInterface;
 use Webman\Http\Response;

@@ -2,6 +2,6 @@
 
 return [
     '' => [
-        \Saithink\ThinkOrmLog\ApiLogMiddleware::class,
+        \Guozhijian611\ThinkOrmLog\ApiLogMiddleware::class,
     ]
 ]; 

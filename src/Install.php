@@ -1,72 +1,71 @@
 <?php
-namespace Saithink\ThinkOrmLog;
+namespace Guozhijian611\ThinkOrmLog;
 
+use support\Plugin;
+
+/**
+ * 插件安装
+ */
 class Install
 {
-    const WEBMAN_PLUGIN = true;
-
     /**
-     * @var array
-     */
-    protected static $pathRelation = [
-        'config/plugin/saithink/thinkorm-log' => 'config/plugin/saithink/thinkorm-log',
-    ];
-
-    /**
-     * Install
+     * 安装时触发
      * @return void
      */
     public static function install()
     {
-        static::installByRelation();
+        // 创建配置目录
+        $configPath = config_path() . '/plugin/guozhijian611/thinkorm-log';
+        if (!is_dir($configPath)) {
+            mkdir($configPath, 0755, true);
+        }
+
+        // 复制配置文件
+        $sourceConfigPath = __DIR__ . '/config/plugin/guozhijian611/thinkorm-log';
+        if (is_dir($sourceConfigPath)) {
+            copy_dir($sourceConfigPath, $configPath);
+        }
+
+        // 创建日志目录
+        $logPath = runtime_path() . '/logs';
+        if (!is_dir($logPath)) {
+            mkdir($logPath, 0755, true);
+        }
+
+        echo "ThinkOrm日志插件安装完成！\n";
+        echo "配置文件位置：{$configPath}/app.php\n";
+        echo "日志文件位置：{$logPath}/sql.log, {$logPath}/api.log\n";
     }
 
     /**
-     * Uninstall
+     * 卸载时触发
      * @return void
      */
     public static function uninstall()
     {
-        self::uninstallByRelation();
+        // 删除配置文件
+        $configPath = config_path() . '/plugin/guozhijian611/thinkorm-log';
+        if (is_dir($configPath)) {
+            remove_dir($configPath);
+        }
+
+        echo "ThinkOrm日志插件卸载完成！\n";
     }
 
     /**
-     * installByRelation
+     * 更新时触发
      * @return void
      */
-    public static function installByRelation()
+    public static function update()
     {
-        foreach (static::$pathRelation as $source => $dest) {
-            if ($pos = strrpos($dest, '/')) {
-                $parent_dir = base_path().'/'.substr($dest, 0, $pos);
-                if (!is_dir($parent_dir)) {
-                    mkdir($parent_dir, 0777, true);
-                }
-            }
-            //symlink(__DIR__ . "/$source", base_path()."/$dest");
-            copy_dir(__DIR__ . "/$source", base_path()."/$dest");
-            echo "Create $dest";
+        // 更新配置文件
+        $configPath = config_path() . '/plugin/guozhijian611/thinkorm-log';
+        $sourceConfigPath = __DIR__ . '/config/plugin/guozhijian611/thinkorm-log';
+        
+        if (is_dir($sourceConfigPath)) {
+            copy_dir($sourceConfigPath, $configPath);
         }
-    }
 
-    /**
-     * uninstallByRelation
-     * @return void
-     */
-    public static function uninstallByRelation()
-    {
-        foreach (static::$pathRelation as $source => $dest) {
-            $path = base_path()."/$dest";
-            if (!is_dir($path) && !is_file($path)) {
-                continue;
-            }
-            echo "Remove $dest";
-            if (is_file($path) || is_link($path)) {
-                unlink($path);
-                continue;
-            }
-            remove_dir($path);
-        }
+        echo "ThinkOrm日志插件更新完成！\n";
     }
-    
 }

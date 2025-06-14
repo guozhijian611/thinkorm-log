@@ -1,7 +1,5 @@
 <?php
 
-use Saithink\ThinkOrmLog\BootstrapLog;
-
 return [
-    BootstrapLog::class,
+    Guozhijian611\ThinkOrmLog\BootstrapLog::class,
 ];
