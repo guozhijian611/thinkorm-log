@@ -14,8 +14,8 @@ class BootstrapLog implements Bootstrap
     {
         $config = config('plugin.guozhijian611.thinkorm-log.app', [
             'enable' => true,
-            'console'   => false,
-            'file'  => true,
+            'console'   => true,
+            'file'  => false,
         ]);
         
         if (!$config['enable']) {

@@ -25,7 +25,7 @@ class ApiLogMiddleware implements MiddlewareInterface
         $config = config('plugin.guozhijian611.thinkorm-log.app.api_log', [
             'enable' => true,
             'console' => true,
-            'file' => true,
+            'file' => false,
             'ignore_paths' => ['logs', 'logview', '/logs', '/logview/']
         ]);
 
