@@ -12,7 +12,7 @@ class BootstrapLog implements Bootstrap
 {
     public static function start($worker)
     {
-        $config = config('plugin.saithink.thinkorm-log.app', [
+        $config = config('plugin.guozhijian611.thinkorm-log.app', [
             'enable' => true,
             'console'   => false,
             'file'  => true,
@@ -35,7 +35,7 @@ class BootstrapLog implements Bootstrap
             }
             // 记录到日志文件
             if ($config['file']) {
-                Log::channel('plugin.saithink.thinkorm-log.sql')->info($log);
+                Log::channel('plugin.guozhijian611.thinkorm-log.sql')->info($log);
             }
         });
     }

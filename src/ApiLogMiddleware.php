@@ -22,7 +22,7 @@ class ApiLogMiddleware implements MiddlewareInterface
     public function process(Request $request, callable $handler): Response
     {
         // 获取配置
-        $config = config('plugin.saithink.thinkorm-log.app.api_log', [
+        $config = config('plugin.guozhijian611.thinkorm-log.app.api_log', [
             'enable' => true,
             'console' => true,
             'file' => true,
@@ -108,7 +108,7 @@ class ApiLogMiddleware implements MiddlewareInterface
 
         // 记录到日志文件
         if ($config['file']) {
-            Log::channel('plugin.saithink.thinkorm-log.api')->info($output);
+            Log::channel('plugin.guozhijian611.thinkorm-log.api')->info($output);
         }
 
         return $response;

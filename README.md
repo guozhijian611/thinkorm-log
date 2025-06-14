@@ -1,8 +1,9 @@
 <div style="padding:18px;max-width: 1024px;margin:0 auto;background-color:#fff;color:#333">
-<h1>基于 webman 的ThinkOrm和 api日志记录</h1>
+<h1>基于 webman 的ThinkOrm和 API日志记录</h1>
 
 基于 <a href="https://www.workerman.net/webman" target="_blank">webman</a> 使用ThinkOrm时的日志记录工具，同时支持API请求日志记录
-本插件基于 saiadmin/webman-log 二次开发
+本插件基于 saithink/thinkorm-log 二次开发，增强API日志功能
+
 <h1>功能特性</h1>
 
 - ThinkOrm SQL查询日志记录
@@ -25,7 +26,7 @@ composer require guozhijian611/thinkorm-log
 
 <h1>配置文件</h1>
 
-基础配置：<code>config/plugin/saithink/thinkorm-log/app.php</code>
+基础配置：<code>config/plugin/guozhijian611/thinkorm-log/app.php</code>
 
 ```php
 return [
@@ -92,7 +93,7 @@ return [
 
 插件通过 Bootstrap 类统一注册所有功能：
 - SQL日志：通过 `Db::listen()` 监听数据库查询
-- API日志：通过 `Middleware::add()` 注册全局中间件
+- API日志：通过中间件配置文件注册全局中间件
 - 配置控制：通过配置文件控制各功能的开关
 
 </div>

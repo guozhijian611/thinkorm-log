@@ -15,7 +15,7 @@ return [
         // 是否输出到控制台
         'console' => true,
         // 是否记录到日志文件
-        'file' => false,
+        'file' => true,
         // 忽略的路径（支持字符串匹配）
         'ignore_paths' => [
             'logs',
